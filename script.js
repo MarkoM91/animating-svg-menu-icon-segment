@@ -65,6 +65,7 @@ function outB(s) {
 function init() {
   let pathA = document.getElementById('pathA'),
   pathB = document.getElementById('pathB'),
+  dummy = document.getElementById('dummy'),
   pathC = document.getElementById('pathC');
   segmentA = new Segment(pathA, 80, 320),
   segmentB = new Segment(pathB, 80, 320);
@@ -79,10 +80,12 @@ function init() {
       inAC(segmentA);
       inB(segmentB);
       inAC(segmentC);
+      dummy.className = 'dummy dummy--active';
     } else {
       outAC(segmentA);
       outB(segmentB);
       outAC(segmentC);
+      dummy.className = 'dummy';
     }
     toCloseIcon = !toCloseIcon;
   });
